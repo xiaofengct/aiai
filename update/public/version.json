@@ -1,25 +1,26 @@
 {
-  "_note": "本文件描述 public 渠道（com.aiai.pub，给用户用的那一版）。2026-10-27 首次填入真值：sizeBytes / sha256 均取自当次签名产物 app-public-arm64-v8a-release.apk（349 条目、apksigner 验签通过 CN=aiAi、aapt2 核过 package=com.aiai.pub versionCode=2026102701 versionName=1.7.1、dex 里无作者自用角色字样）。⚠ 远端 update/version.json（旧路径兼容别名）必须推**同一份字节**。",
+  "_note": "本文件描述 public 渠道（应用名「念念」/ 包名 com.aiai.pub，给用户用的那一版）。2026-10-27 第二次发版（1.7.2：改名 + 新图标）：sizeBytes / sha256 取自当次签名产物 app-public-arm64-v8a-release.apk（349 条目、apksigner 验签 CN=aiAi、aapt2 核 application-label=念念 package=com.aiai.pub versionCode=2026102702 versionName=1.7.2、dex 里无作者自用角色字样）。⚠ 远端 update/version.json（旧路径兼容别名）必须推**同一份字节**。",
   "_schema": "见 docs/reports/n28-update/DESIGN.md §1；与 update/self/version.json 结构相同，只有渠道不同",
   "_channel": "public",
   "_updatedAt": "2026-10-27",
-  "versionCode": 2026102701,
-  "versionName": "1.7.1",
+  "versionCode": 2026102702,
+  "versionName": "1.7.2",
   "changelog": [
-    "反馈可以直接发给作者了：填完之后多了两个按钮 ——「发到邮箱」（只有作者能看到）和「发到 GitHub Issues」（公开，所有人都能看到）。",
-    "下载更新包时多核一道：除了大小和指纹，还会确认这个安装包是不是「ai爱」本身。三样里任何一样对不上，都会把文件丢掉、不交给系统安装。"
+    "改名了：以前叫「ai爱」，现在叫「念念」。包名也从 com.aiai.app 换成了 com.aiai.pub —— 两者在系统里是两个不同的 App，所以新包会装成第二个图标，确认能用之后把老的卸载即可（聊天记录不通用，先用老的「一键备份」再在新的里导入）。",
+    "换了一个新图标：墨青底 + 白色对话气泡 + 三个点。",
+    "下载更新包时多核一道：除了大小和指纹，还会确认这个安装包是不是「念念」本身。三样里任何一样对不上，都会把文件丢掉、不交给系统安装。"
   ],
   "apk": [
     {
       "abi": "arm64-v8a",
-      "url": "https://github.com/xiaofengct/aiai/releases/download/v1.7.1/aiai-pub-1.7.1-arm64-v8a.apk",
-      "sizeBytes": 29999911,
-      "sha256": "562ac4f0b39cbaae6ddd049f876977fdd4575edc167851eabce8e5cbb3d2cf78"
+      "url": "https://github.com/xiaofengct/aiai/releases/download/v1.7.2/niannian-1.7.2-arm64-v8a.apk",
+      "sizeBytes": 29999523,
+      "sha256": "815ddc5d5762641e580a2bb330006d73dab78a20bb8e6fbce28c37f549780526"
     }
   ],
   "force": false,
   "_releaseAbis": [
     "arm64-v8a"
   ],
-  "_releaseAbis_note": "本版只发 64 位真机包。public 渠道已发版 ⇒ 本文件不再是占位态，versionCode 已与 app/build.gradle.kts 对齐。改这个字段必须同步改 apk[]，否则 UpdateVersionJsonGuardTest 会红。"
+  "_releaseAbis_note": "本版只发 64 位真机包。public 渠道已发版 ⇒ versionCode 与 app/build.gradle.kts 对齐。改这个字段必须同步改 apk[]，否则 UpdateVersionJsonGuardTest 会红。"
 }
