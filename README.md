@@ -13,7 +13,8 @@
 | **导入角色卡** | 🎭 [`personas/`](personas/) —— **两批共 40 张** `chara_card_v2` 卡，导入即用：<br>· [`personas/xiaofeng/`](personas/xiaofeng/) —— **30 张原创卡**（恋爱 / 学园 / 仙侠 / 科幻 / 悬疑 / 武侠 / 职场 / 历史 / 奇幻 / 治愈 / 搞笑 / 拟人 / 市井），作者 xiaofeng，**可自由分发、可自己改**<br>· [`personas/`](personas/) 根目录 —— 另 10 张（沈砚 / 林夏 / 苏晚 / 陈默 / 南栀 / 温以宁 / 阿岚 / 许清和 / 陆遥 / 程野） |
 | **看授权条款** | [LICENSE](LICENSE) · App 内「设置 → 关于 → 用户协议」第十节 |
 
-App 内「设置 → 关于 → 检查更新」读这里的 [`update/version.json`](update/version.json)。
+App 内「设置 → 关于 → 检查更新」读这里的 [`update/public/version.json`](update/public/version.json)。
+（`update/version.json` 是**旧路径的兼容别名**，内容与它逐字节相同，给早期版本用；新版本只读前者。）
 
 ---
 
@@ -40,9 +41,13 @@ App 内「设置 → 关于 → 检查更新」读这里的 [`update/version.jso
 
 ## 怎么装
 
-1. 打开 [Releases](../../releases)，下载最新一版的 `aiai-<版本>-arm64-v8a.apk`
+1. 打开 [Releases](../../releases)，下载最新一版的 `aiai-pub-<版本>-arm64-v8a.apk`
 2. 传到手机点开安装（提示「未知来源」就允许）
 3. 如果提示**签名不一致** ⇒ 手机上装的那个不是用同一把钥匙签的，必须卸载重装（数据会没，先导出）
+
+★ 包名是 **`com.aiai.pub`**。早期公开过的包名是 `com.aiai.app`，两者**在系统里是两个不同的 App**
+⇒ 如果你以前装过老包，新包会**装成第二个图标**，两个能同时存在。确认新包能用之后，把老的那个卸载掉即可
+（聊天记录不通用，需要的话先在老 App 里「一键备份」再在新 App 里导入）。
 
 系统要求：**Android 7.0（API 24）及以上**。
 
@@ -75,15 +80,15 @@ App 内「设置 → 关于 → 检查更新」读这里的 [`update/version.jso
 
 ```
 App 点「检查更新」
-  → GET update/version.json（本仓库 main 分支）
+  → GET update/public/version.json（本仓库 main 分支）
   → 只比 versionCode 整数（不比字符串版本号）
   → 有新版 ⇒ 从 Releases 下载对应 ABI 的 APK
-  → 先核对 sizeBytes 与 sha256，对不上就直接删掉
-  → 交给系统安装器，由你亲手点「安装」
+  → 先核对三样：sizeBytes、sha256、以及这个包是不是「ai爱」本身（包名）
+  → 三样全对上才交给系统安装器，由你亲手点「安装」
 ```
 
 - **不自动检查、不自动下载、不后台偷跑**，每次都由你点。
-- 下载只认 `sizeBytes` + `sha256`，任一不符 ⇒ 丢弃并提示。
+- 下载只认 `sizeBytes` + `sha256` + **包名**，任一不符 ⇒ 丢弃并提示，**不会**把别的应用装进你手机。
 - 选包只看本机真实 ABI，**不会「找不到就随便装一个」**。
 
 ## 隐私
