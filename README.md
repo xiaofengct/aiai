@@ -7,6 +7,7 @@
 
 | 想干什么 | 去哪 |
 |---|---|
+| **在手机上看（不用装 GitHub）** | 🌐 [**在线图文版**](https://aiai-usage.app.workbuddy.host/?sharecode=UQUXPMNECZ) —— 同一份说明的网页版，国内可直接打开 |
 | **装上、学会用** | 📖 [**使用说明（图文步骤）**](USAGE.md) ← 从装包到聊天，配真机截图 |
 | **下载安装包** | [Releases](../../releases) |
 | **导入角色卡** | 🎭 [`personas/`](personas/) —— 10 个 `chara_card_v2` 角色卡，导入即用 |
