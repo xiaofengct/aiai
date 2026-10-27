@@ -1,5 +1,5 @@
 {
-  "_note": "本文件描述 public 渠道（应用名「念念」/ 包名 com.aiai.pub）。2026-10-27 第三版（1.7.3）：改名 + 新图标 + 首页顶栏改用 app_name（原写死「ai爱」）+ 补 1.7.3 更新说明条目。sizeBytes / sha256 取自当次签名产物 app-public-arm64-v8a-release.apk（aapt2 核 application-label=念念 package=com.aiai.pub versionCode=2026102703 versionName=1.7.3）。⚠ 远端 update/version.json（旧路径兼容别名）必须推同一份字节。",
+  "_note": "本文件描述 public 渠道（应用名「念念」/ 包名 com.aiai.pub）。2026-10-27 第三版（1.7.3）：改名 + 新图标 + 首页顶栏改用 app_name（原写死「ai爱」）+ 补 1.7.3 更新说明条目。sizeBytes / sha256 取自 `clean` 重建并**逐包结构校验通过**的产物（349 条目 / manifest+arsc+res 齐全） app-public-arm64-v8a-release.apk（aapt2 核 application-label=念念 package=com.aiai.pub versionCode=2026102703 versionName=1.7.3）。⚠ 远端 update/version.json（旧路径兼容别名）必须推同一份字节。",
   "_schema": "见 docs/reports/n28-update/DESIGN.md §1；与 update/self/version.json 结构相同，只有渠道不同",
   "_channel": "public",
   "_updatedAt": "2026-10-27",
@@ -15,7 +15,7 @@
       "abi": "arm64-v8a",
       "url": "https://github.com/xiaofengct/aiai/releases/download/v1.7.3/niannian-1.7.3-arm64-v8a.apk",
       "sizeBytes": 29999847,
-      "sha256": "2c780cb456d844ea9a6855e4d06a05de592a79adc732583b43801de7632255d7"
+      "sha256": "070ed4cc5f6a7a1f95a95525541eb7cd5ac1a020dd5be7f3b54b86e8564cf119"
     }
   ],
   "force": false,
