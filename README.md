@@ -7,7 +7,7 @@
 
 | 想干什么 | 去哪 |
 |---|---|
-| **在手机上看（不用装 GitHub）** | 🌐 [**在线图文版**](https://aiai-usage.app.workbuddy.host/?sharecode=UQUXPMNECZ) —— 同一份说明的网页版，国内可直接打开 |
+| **看使用说明（两种在线版）** | 🌐 [**在线图文版**](https://aiai-usage.app.workbuddy.host/?sharecode=UQUXPMNECZ) —— 国内直达，手机可看，15 张真机截图全在<br>📄 [**飞书文档版**](https://feishu.doubao.com/docx/Iv8Ed1BRAoQKHixFTQkcgvUjnbh) —— 用飞书打开（需登录飞书） |
 | **装上、学会用** | 📖 [**使用说明（图文步骤）**](USAGE.md) ← 从装包到聊天，配真机截图 |
 | **下载安装包** | [Releases](../../releases) |
 | **导入角色卡** | 🎭 [`personas/`](personas/) —— 10 个 `chara_card_v2` 角色卡，导入即用 |
