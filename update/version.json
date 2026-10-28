@@ -1,22 +1,21 @@
 {
-  "_note": "本文件描述 public 渠道（应用名「念念」/ 包名 com.aiai.pub）。2026-10-28 第一版（1.7.4）：聊天输入栏改成微信布局（左语音 / 中输入框 / 右表情 / 最右「＋」，点「＋」弹出图片、画一张、音频三个入口；有字时最右变发送）+ 引导页欢迎语改读渠道常量（原来写死「ai爱」）。sizeBytes / sha256 取自 `clean` 重建并**逐包结构校验通过**的产物（349 条目 / manifest+arsc+dex 各 1） app-public-arm64-v8a-release.apk（aapt2 核 application-label=念念 package=com.aiai.pub versionCode=2026102801 versionName=1.7.4）。⚠ 远端 update/version.json（旧路径兼容别名）必须推同一份字节。",
+  "_note": "本文件描述 public 渠道（应用名「念念」/ 包名 com.aiai.pub）。2026-10-28 第二版（1.7.5）：只补一段说明 —— 设置 → 关于里新增「关于作者」（个人开发 / 在读 / 更新会慢 / 反馈走邮箱与 GitHub Issue），无功能变化。sizeBytes / sha256 取自 `clean` 重建并**逐包结构校验通过**的产物（349 条目 / manifest+arsc 齐全） app-public-arm64-v8a-release.apk（aapt2 核 application-label=念念 package=com.aiai.pub versionCode=2026102802 versionName=1.7.5）。⚠ 远端 update/version.json（旧路径兼容别名）必须推同一份字节。",
   "_schema": "见 docs/reports/n28-update/DESIGN.md §1；与 update/self/version.json 结构相同，只有渠道不同",
   "_channel": "public",
   "_updatedAt": "2026-10-28",
-  "versionCode": 2026102801,
-  "versionName": "1.7.4",
+  "versionCode": 2026102802,
+  "versionName": "1.7.5",
   "changelog": [
-    "聊天输入栏照微信的排法重做了一遍：最左边是语音，中间是输入框，右边是表情，最右是「＋」。",
-    "点「＋」会弹出三个入口 —— 图片、画一张、音频，点哪个走哪个。不再挤在输入框旁边一排小图标。",
-    "输入框里打了字（或者已经加了附件），最右边的「＋」会变成一个发送箭头，点它就发出去；框是空的时候才显示「＋」。",
-    "修了一处欢迎语：新装第一次打开时的「欢迎来到…」原来写死成旧名字，现在跟着安装包自己的名字走。"
+    "设置 → 关于里加了一段「关于作者」：这个 App 是一个人做的，作者还在上学，只能用课余时间更新，所以会慢一些。",
+    "有问题、想提功能：发邮件到 2446136141@qq.com，或到 GitHub 仓库提 Issue（github.com/xiaofengct/niannian/issues）。",
+    "本版只补了这段说明，没有功能变化。"
   ],
   "apk": [
     {
       "abi": "arm64-v8a",
-      "url": "https://github.com/xiaofengct/niannian/releases/download/v1.7.4/niannian-1.7.4-arm64-v8a.apk",
-      "sizeBytes": 30002183,
-      "sha256": "c887dc0bb50093ee36f177bbdfe68be7ff0f2733c4b2ea4ec393ad58b123a7cc"
+      "url": "https://github.com/xiaofengct/niannian/releases/download/v1.7.5/niannian-1.7.5-arm64-v8a.apk",
+      "sizeBytes": 30002871,
+      "sha256": "8f86fd4c8d6d338eb076db3bcb86bf4d7cdd935e556bc74beee93d5dc4e3fc90"
     }
   ],
   "force": false,
