@@ -10,7 +10,7 @@
 
 | 想干什么 | 去哪 |
 |---|---|
-| **看使用说明（三种在线版）** | 🌐 [**在线图文版**](https://aiai-usage.app.workbuddy.host/?sharecode=UQUXPMNECZ) —— 国内直达，手机可看，15 张真机截图全在<br>🐙 [**GitHub Pages 版**](https://xiaofengct.github.io/aiai/) —— 同一个页面，图片已内嵌，不依赖任何图床<br>📄 [**飞书文档版**](https://feishu.doubao.com/docx/QdjfdOAi3oMJhXxqAngcg0lAnCe) —— 用飞书打开（需登录飞书） |
+| **看使用说明（三种在线版）** | 🌐 [**在线图文版**](https://aiai-usage.app.workbuddy.host/?sharecode=UQUXPMNECZ) —— 国内直达，手机可看，15 张真机截图全在<br>🐙 [**GitHub Pages 版**](https://xiaofengct.github.io/niannian/) —— 同一个页面，图片已内嵌，不依赖任何图床<br>📄 [**飞书文档版**](https://feishu.doubao.com/docx/QdjfdOAi3oMJhXxqAngcg0lAnCe) —— 用飞书打开（需登录飞书） |
 | **装上、学会用** | 📖 [**使用说明（图文步骤）**](USAGE.md) ← 从装包到聊天，配真机截图 |
 | **下载安装包** | [Releases](../../releases) |
 | **导入角色卡** | 🎭 [`personas/`](personas/) —— **两批共 40 张** `chara_card_v2` 卡，导入即用：<br>· [`personas/xiaofeng/`](personas/xiaofeng/) —— **30 张原创卡**（恋爱 / 学园 / 仙侠 / 科幻 / 悬疑 / 武侠 / 职场 / 历史 / 奇幻 / 治愈 / 搞笑 / 拟人 / 市井），作者 xiaofeng，**可自由分发、可自己改**<br>· [`personas/`](personas/) 根目录 —— 另 10 张（沈砚 / 林夏 / 苏晚 / 陈默 / 南栀 / 温以宁 / 阿岚 / 许清和 / 陆遥 / 程野） |

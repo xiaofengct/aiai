@@ -14,7 +14,7 @@
   "apk": [
     {
       "abi": "arm64-v8a",
-      "url": "https://github.com/xiaofengct/aiai/releases/download/v1.7.4/niannian-1.7.4-arm64-v8a.apk",
+      "url": "https://github.com/xiaofengct/niannian/releases/download/v1.7.4/niannian-1.7.4-arm64-v8a.apk",
       "sizeBytes": 30002183,
       "sha256": "c887dc0bb50093ee36f177bbdfe68be7ff0f2733c4b2ea4ec393ad58b123a7cc"
     }
