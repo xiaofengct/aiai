@@ -1,26 +1,26 @@
 {
-  "_note": "本文件描述 public 渠道（应用名「念念」/ 包名 com.aiai.pub）。2026-10-29（1.7.6）：打赏从「鸣谢」里拆成独立页（收款码 + 爱发电链接，App 不经手钱、不解锁功能），设置里能点进去的行右侧加了箭头，开屏第一句隐私口径订正（原来那句「不上传任何服务器」不准确）。sizeBytes / sha256 取自 `clean` 重建并**逐包结构校验通过**的产物（349 条目 / manifest=1 / resources.arsc=1） app-public-arm64-v8a-release.apk（aapt2 核 application-label=念念 package=com.aiai.pub versionCode=2026102803 versionName=1.7.6，apksigner 核 V2 签名 CN=aiAi）。",
+  "_note": "本文件描述 public 渠道（应用名「念念」/ 包名 com.aiai.pub）。2026-10-29（1.7.7）：导入角色卡可以一次选多个文件（人设页右上角「导入」，选择器里长按多选）；一个文件坏了不拖累别的，全部处理完汇成一条提示（成功几张卡 / 跳过几个内置 / 几个文件读不了）。sizeBytes / sha256 取自 `clean` 重建并**逐包结构校验通过**的产物 app-public-arm64-v8a-release.apk（349 条目 / AndroidManifest.xml=1 / resources.arsc=1；aapt2 核 application-label=念念 package=com.aiai.pub versionCode=2026102901 versionName=1.7.7 native-code=arm64-v8a；apksigner 核 V2 签名 CN=aiAi）。",
   "_schema": "见 docs/reports/n28-update/DESIGN.md §1；与 update/self/version.json 结构相同，只有渠道不同",
   "_channel": "public",
   "_updatedAt": "2026-10-29",
-  "versionCode": 2026102803,
-  "versionName": "1.7.6",
+  "versionCode": 2026102901,
+  "versionName": "1.7.7",
   "changelog": [
-    "「打赏」有了自己的页面：设置 → 关于 里「鸣谢」下面多了一个入口，点进去是收款码和爱发电链接；「鸣谢」现在只用来道谢。App 不经手任何一笔钱，打赏也不解锁任何东西。",
-    "设置里能点进去的行右边都加了小箭头，一眼看得出哪行能点。",
-    "开屏第一句原来写「所有数据都留在这台手机上，不上传任何服务器」，这句不准确，已改为：聊天记录、人设、记忆都存在手机上，只有生成回复时你打的字会发给你自己配置的模型服务。"
+    "导入角色卡可以一次选多个文件了：人设页右上角点「导入」，在选择器里长按就能多选，一次勾几个导几个。",
+    "一个文件坏了不会拖累别的：导入完会告诉你成功几个、跳过几个内置角色、还有几个文件读不了。",
+    "用「导出全部」导出的那种文件（一个文件里装着好几张卡）照样一次全导进来 —— 成功数按卡算，不按文件算。"
   ],
   "apk": [
     {
       "abi": "arm64-v8a",
-      "url": "https://github.com/xiaofengct/niannian/releases/download/v1.7.6/niannian-1.7.6-arm64-v8a.apk",
-      "sizeBytes": 30012179,
-      "sha256": "5e1bb1f893d2fd343c971dbea0ccf038f86f6c74e8080d9ceb3ae4771885abca"
+      "url": "https://github.com/xiaofengct/niannian/releases/download/v1.7.7/niannian-1.7.7-arm64-v8a.apk",
+      "sizeBytes": 30016591,
+      "sha256": "dc8fb4e294f8aa7d587fc63391643de664e0e99e82b11f4e258833459e6ef75d"
     }
   ],
   "force": false,
   "_releaseAbis": [
     "arm64-v8a"
   ],
-  "_releaseAbis_note": "本版只发 64 位真机包。public 渠道已发版 ⇒ versionCode 与 app/build.gradle.kts 对齐。改这个字段必须同步改 apk[]，否则 UpdateVersionJsonGuardTest 会红。"
+  "_releaseAbis_note": "本版只发 64 位真机包。改这个字段必须同步改 apk[]，否则 UpdateVersionJsonGuardTest 会红。"
 }
