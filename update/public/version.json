@@ -1,21 +1,22 @@
 {
-  "_note": "本文件描述 public 渠道（应用名「念念」/ 包名 com.aiai.pub）。2026-10-29（1.7.7）：导入角色卡可以一次选多个文件（人设页右上角「导入」，选择器里长按多选）；一个文件坏了不拖累别的，全部处理完汇成一条提示（成功几张卡 / 跳过几个内置 / 几个文件读不了）。sizeBytes / sha256 取自 `clean` 重建并**逐包结构校验通过**的产物 app-public-arm64-v8a-release.apk（349 条目 / AndroidManifest.xml=1 / resources.arsc=1；aapt2 核 application-label=念念 package=com.aiai.pub versionCode=2026102901 versionName=1.7.7 native-code=arm64-v8a；apksigner 核 V2 签名 CN=aiAi）。",
+  "_note": "本文件描述 public 渠道（应用名「念念」/ 包名 com.aiai.pub）。2026-10-29（1.7.8）：导入角色卡支持**一次选多个文件**（人设页右上角「导入」，选择器里长按多选）；一个文件坏了不拖累别的，全部处理完汇成一条提示（成功几张卡 / 跳过几个内置 / 几个文件读不了）；中途离开页面立刻停下。★ changelog 取的是「1.7.6 → 本版」的合集（中间那个 1.7.7 是同日的收口前构建、未对外分发），所以 4 条里包含 1.7.7 已描述过的功能 —— 用户在弹窗里需要一次看全。sizeBytes / sha256 取自 `clean` 重建并**逐包结构校验通过**的产物 app-public-arm64-v8a-release.apk（349 条目 / AndroidManifest.xml=1 / resources.arsc=1；aapt2 核 application-label=念念 package=com.aiai.pub versionCode=2026102902 versionName=1.7.8 native-code=arm64-v8a；apksigner 核 V2 签名 CN=aiAi；包内 assets/changelog.json 顶部 = 1.7.8 / 2026102902 / 4 条）。",
   "_schema": "见 docs/reports/n28-update/DESIGN.md §1；与 update/self/version.json 结构相同，只有渠道不同",
   "_channel": "public",
   "_updatedAt": "2026-10-29",
-  "versionCode": 2026102901,
-  "versionName": "1.7.7",
+  "versionCode": 2026102902,
+  "versionName": "1.7.8",
   "changelog": [
     "导入角色卡可以一次选多个文件了：人设页右上角点「导入」，在选择器里长按就能多选，一次勾几个导几个。",
     "一个文件坏了不会拖累别的：导入完会告诉你成功几个、跳过几个内置角色、还有几个文件读不了。",
-    "用「导出全部」导出的那种文件（一个文件里装着好几张卡）照样一次全导进来 —— 成功数按卡算，不按文件算。"
+    "用「导出全部」导出的那种文件（一个文件里装着好几张卡）照样一次全导进来 —— 成功数按卡算，不按文件算。",
+    "中途离开页面会立刻停下，不会在后台把剩下的文件白跑一遍。"
   ],
   "apk": [
     {
       "abi": "arm64-v8a",
-      "url": "https://github.com/xiaofengct/niannian/releases/download/v1.7.7/niannian-1.7.7-arm64-v8a.apk",
-      "sizeBytes": 30016591,
-      "sha256": "dc8fb4e294f8aa7d587fc63391643de664e0e99e82b11f4e258833459e6ef75d"
+      "url": "https://github.com/xiaofengct/niannian/releases/download/v1.7.8/niannian-1.7.8-arm64-v8a.apk",
+      "sizeBytes": 30015155,
+      "sha256": "355a77c84bf1fae176383dbb80f8eaea0d0d717b227ca5114ef80ca1aa1e9cc6"
     }
   ],
   "force": false,
