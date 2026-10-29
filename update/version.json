@@ -1,21 +1,21 @@
 {
-  "_note": "本文件描述 public 渠道（应用名「念念」/ 包名 com.aiai.pub）。2026-10-28 第二版（1.7.5）：只补一段说明 —— 设置 → 关于里新增「关于作者」（个人开发 / 在读 / 更新会慢 / 反馈走邮箱与 GitHub Issue），无功能变化。sizeBytes / sha256 取自 `clean` 重建并**逐包结构校验通过**的产物（349 条目 / manifest+arsc 齐全） app-public-arm64-v8a-release.apk（aapt2 核 application-label=念念 package=com.aiai.pub versionCode=2026102802 versionName=1.7.5）。⚠ 远端 update/version.json（旧路径兼容别名）必须推同一份字节。",
+  "_note": "本文件描述 public 渠道（应用名「念念」/ 包名 com.aiai.pub）。2026-10-29（1.7.6）：打赏从「鸣谢」里拆成独立页（收款码 + 爱发电链接，App 不经手钱、不解锁功能），设置里能点进去的行右侧加了箭头，开屏第一句隐私口径订正（原来那句「不上传任何服务器」不准确）。sizeBytes / sha256 取自 `clean` 重建并**逐包结构校验通过**的产物（349 条目 / manifest=1 / resources.arsc=1） app-public-arm64-v8a-release.apk（aapt2 核 application-label=念念 package=com.aiai.pub versionCode=2026102803 versionName=1.7.6，apksigner 核 V2 签名 CN=aiAi）。",
   "_schema": "见 docs/reports/n28-update/DESIGN.md §1；与 update/self/version.json 结构相同，只有渠道不同",
   "_channel": "public",
-  "_updatedAt": "2026-10-28",
-  "versionCode": 2026102802,
-  "versionName": "1.7.5",
+  "_updatedAt": "2026-10-29",
+  "versionCode": 2026102803,
+  "versionName": "1.7.6",
   "changelog": [
-    "设置 → 关于里加了一段「关于作者」：这个 App 是一个人做的，作者还在上学，只能用课余时间更新，所以会慢一些。",
-    "有问题、想提功能：发邮件到 2446136141@qq.com，或到 GitHub 仓库提 Issue（github.com/xiaofengct/niannian/issues）。",
-    "本版只补了这段说明，没有功能变化。"
+    "「打赏」有了自己的页面：设置 → 关于 里「鸣谢」下面多了一个入口，点进去是收款码和爱发电链接；「鸣谢」现在只用来道谢。App 不经手任何一笔钱，打赏也不解锁任何东西。",
+    "设置里能点进去的行右边都加了小箭头，一眼看得出哪行能点。",
+    "开屏第一句原来写「所有数据都留在这台手机上，不上传任何服务器」，这句不准确，已改为：聊天记录、人设、记忆都存在手机上，只有生成回复时你打的字会发给你自己配置的模型服务。"
   ],
   "apk": [
     {
       "abi": "arm64-v8a",
-      "url": "https://github.com/xiaofengct/niannian/releases/download/v1.7.5/niannian-1.7.5-arm64-v8a.apk",
-      "sizeBytes": 30002871,
-      "sha256": "8f86fd4c8d6d338eb076db3bcb86bf4d7cdd935e556bc74beee93d5dc4e3fc90"
+      "url": "https://github.com/xiaofengct/niannian/releases/download/v1.7.6/niannian-1.7.6-arm64-v8a.apk",
+      "sizeBytes": 30012179,
+      "sha256": "5e1bb1f893d2fd343c971dbea0ccf038f86f6c74e8080d9ceb3ae4771885abca"
     }
   ],
   "force": false,
