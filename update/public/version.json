@@ -1,5 +1,5 @@
 {
-  "_note": "本文件描述 public 渠道（应用名「念念」/ 包名 com.aiai.pub）。2026-10-29（1.8.0）：①上下文窗口上限 131072 → 1_000_000（滑杆改 6 档 32K/64K/128K/256K/512K/1M），上下文条数上限 100 → 2000，默认值窗口 32K → 128K、条数 20 → 100、maxMessages 200 → 1000；②老用户旧默认值一次性迁移（三值联合指纹 32000/20/200 + contextDefaultsMigrated 标记，只升一次）；③默认模型 deepseek-chat → deepseek-flash（官方 2026-07-24 已退役旧名）；④修「一直卡在等待模型」：LlmClient 流式 readTimeout(0)=永不超时 → 有限空闲超时（连接超时 3 倍，夹 [60s,600s]）。★ changelog 取的是「1.7.9 → 本版」的增量。sizeBytes / sha256 取自 arm64-v8a 单 ABI 构建并**逐包结构校验通过**的产物 app-public-arm64-v8a-release.apk（349 条目 / AndroidManifest.xml=1 / resources.arsc=1；aapt2 核 package=com.aiai.pub versionCode=2026102904 versionName=1.8.0；apksigner 核签名 CN=aiAi；包内 assets/changelog.json 顶部 = 1.8.0 / 2026102904 / 3 节 14 条）。★ 单 ABI 构建原因：三 ABI 并行打包会出现 arm64 包缺 resources.arsc / AndroidManifest.xml 的残缺产物（DEF-27 的真实触发条件是并发打包，并非「未 clean」）。",
+  "_note": "本文件描述 public 渠道（应用名「念念」/ 包名 com.aiai.pub）。2026-10-29（1.8.0）：①上下文窗口上限 131072 → 1_000_000（滑杆改 6 档 32K/64K/128K/256K/512K/1M），上下文条数上限 100 → 2000，默认值窗口 32K → 128K、条数 20 → 100、maxMessages 200 → 1000；②老用户旧默认值一次性迁移（三值联合指纹 32000/20/200 + contextDefaultsMigrated 标记，只升一次）；③默认模型 deepseek-chat → deepseek-flash（官方 2026-07-24 已退役旧名）；④修「一直卡在等待模型」：LlmClient 流式 readTimeout(0)=永不超时 → 有限空闲超时（连接超时 3 倍，夹 [60s,600s]）。★ changelog 取的是「1.7.9 → 本版」的增量。★★ 本包为**修复 testOnly 后重建**：首版误用 `-Pandroid.injected.build.abi` 单 ABI 构建，AGP 把 APK 标成 `android:testOnly=\"true\"` ⇒ 真机安装报「安装失败(-15)」。重建时加 `-Pandroid.injected.testOnly=false`，已核 testOnly=0。sizeBytes / sha256 取自 arm64-v8a 单 ABI 构建并**逐包结构校验通过**的产物 app-public-arm64-v8a-release.apk（349 条目 / AndroidManifest.xml=1 / resources.arsc=1；aapt2 核 package=com.aiai.pub versionCode=2026102904 versionName=1.8.0；apksigner 核签名 CN=aiAi；包内 assets/changelog.json 顶部 = 1.8.0 / 2026102904 / 3 节 14 条）。★ 单 ABI 构建原因：三 ABI 并行打包会出现 arm64 包缺 resources.arsc / AndroidManifest.xml 的残缺产物（DEF-27 的真实触发条件是并发打包，并非「未 clean」）。",
   "_schema": "见 docs/reports/n28-update/DESIGN.md §1；与 update/self/version.json 结构相同，只有渠道不同",
   "_channel": "public",
   "_updatedAt": "2026-10-29",
@@ -17,8 +17,8 @@
     {
       "abi": "arm64-v8a",
       "url": "https://github.com/xiaofengct/niannian/releases/download/v1.8.0/niannian-1.8.0-arm64-v8a.apk",
-      "sizeBytes": 30033827,
-      "sha256": "a1caf63e6c72ec3d24675bcf6f3364ef2f2216e812fb66cfa947c0cbdd9556d0"
+      "sizeBytes": 30033811,
+      "sha256": "04735c91b298f7ff8cb30968e6e858aa294cddc443857a396ecbd6022eb1a07d"
     }
   ],
   "force": false,
