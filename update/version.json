@@ -1,22 +1,23 @@
 {
-  "_note": "本文件描述 public 渠道（应用名「念念」/ 包名 com.aiai.pub）。2026-10-29（1.7.8）：导入角色卡支持**一次选多个文件**（人设页右上角「导入」，选择器里长按多选）；一个文件坏了不拖累别的，全部处理完汇成一条提示（成功几张卡 / 跳过几个内置 / 几个文件读不了）；中途离开页面立刻停下。★ changelog 取的是「1.7.6 → 本版」的合集（中间那个 1.7.7 是同日的收口前构建、未对外分发），所以 4 条里包含 1.7.7 已描述过的功能 —— 用户在弹窗里需要一次看全。sizeBytes / sha256 取自 `clean` 重建并**逐包结构校验通过**的产物 app-public-arm64-v8a-release.apk（349 条目 / AndroidManifest.xml=1 / resources.arsc=1；aapt2 核 application-label=念念 package=com.aiai.pub versionCode=2026102902 versionName=1.7.8 native-code=arm64-v8a；apksigner 核 V2 签名 CN=aiAi；包内 assets/changelog.json 顶部 = 1.7.8 / 2026102902 / 4 条）。",
+  "_note": "本文件描述 public 渠道（应用名「念念」/ 包名 com.aiai.pub）。2026-10-29（1.7.9）：瞬间（朋友圈）第二段 —— ①「她可以自己发动态」真的会自己按计划发了（默认关；两条之间至少隔 2 小时、跨所有角色算；每人每天默认 2 条、可调 1~5；深夜静默与不在活跃时段不发）；②瞬间页顶部按角色筛选 + 点作者头像/名字弹出她的主页；③角色立绘接进瞬间当头像（没立绘显示字母头像，不出破图）。★ changelog 取的是「1.7.8 → 本版」的增量（1.7.9 紧接上一对外版，无跳号）。sizeBytes / sha256 取自 arm64-v8a 单 ABI 构建并**逐包结构校验通过**的产物 app-public-arm64-v8a-release.apk（349 条目 / AndroidManifest.xml=1 / resources.arsc=1；aapt2 核 package=com.aiai.pub versionCode=2026102903 versionName=1.7.9；apksigner 核签名 CN=aiAi；包内 assets/changelog.json 顶部 = 1.7.9 / 2026102903 / 3 节 9 条）。★ 单 ABI 构建原因：三 ABI 并行打包会出现 arm64 包缺 resources.arsc / AndroidManifest.xml 的残缺产物（DEF-27 的真实触发条件是并发打包，并非「未 clean」）。",
   "_schema": "见 docs/reports/n28-update/DESIGN.md §1；与 update/self/version.json 结构相同，只有渠道不同",
   "_channel": "public",
   "_updatedAt": "2026-10-29",
-  "versionCode": 2026102902,
-  "versionName": "1.7.8",
+  "versionCode": 2026102903,
+  "versionName": "1.7.9",
   "changelog": [
-    "导入角色卡可以一次选多个文件了：人设页右上角点「导入」，在选择器里长按就能多选，一次勾几个导几个。",
-    "一个文件坏了不会拖累别的：导入完会告诉你成功几个、跳过几个内置角色、还有几个文件读不了。",
-    "用「导出全部」导出的那种文件（一个文件里装着好几张卡）照样一次全导进来 —— 成功数按卡算，不按文件算。",
-    "中途离开页面会立刻停下，不会在后台把剩下的文件白跑一遍。"
+    "以前她只能「你催一下、她发一条」。现在瞬间页右上角「设置」里打开「她可以自己发动态」，不用你先说话，她自己会按节奏发。",
+    "节奏：两条之间至少隔 2 小时（跨所有角色算），每天每人默认最多 2 条、可以改成 1~5 条。★ 这条要花钱，每发一条就是一次模型调用。",
+    "瞬间页顶部多了一排筛选：点「全部」看所有人，点某个角色就只看她发的那几条。",
+    "点动态上的作者头像或名字，会弹出她的主页：头像、名字、「她的 N 条瞬间」和她全部动态。",
+    "角色立绘现在会显示在瞬间里当头像了；没设立绘的显示字母头像，不会出破图。"
   ],
   "apk": [
     {
       "abi": "arm64-v8a",
-      "url": "https://github.com/xiaofengct/niannian/releases/download/v1.7.8/niannian-1.7.8-arm64-v8a.apk",
-      "sizeBytes": 30015155,
-      "sha256": "355a77c84bf1fae176383dbb80f8eaea0d0d717b227ca5114ef80ca1aa1e9cc6"
+      "url": "https://github.com/xiaofengct/niannian/releases/download/v1.7.9/niannian-1.7.9-arm64-v8a.apk",
+      "sizeBytes": 30030995,
+      "sha256": "e3b286ed794ee26bead8873c096a7b842a94e7bc4d254dc6008d6bda4232a35a"
     }
   ],
   "force": false,
