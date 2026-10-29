@@ -1,23 +1,24 @@
 {
-  "_note": "本文件描述 public 渠道（应用名「念念」/ 包名 com.aiai.pub）。2026-10-29（1.7.9）：瞬间（朋友圈）第二段 —— ①「她可以自己发动态」真的会自己按计划发了（默认关；两条之间至少隔 2 小时、跨所有角色算；每人每天默认 2 条、可调 1~5；深夜静默与不在活跃时段不发）；②瞬间页顶部按角色筛选 + 点作者头像/名字弹出她的主页；③角色立绘接进瞬间当头像（没立绘显示字母头像，不出破图）。★ changelog 取的是「1.7.8 → 本版」的增量（1.7.9 紧接上一对外版，无跳号）。sizeBytes / sha256 取自 arm64-v8a 单 ABI 构建并**逐包结构校验通过**的产物 app-public-arm64-v8a-release.apk（349 条目 / AndroidManifest.xml=1 / resources.arsc=1；aapt2 核 package=com.aiai.pub versionCode=2026102903 versionName=1.7.9；apksigner 核签名 CN=aiAi；包内 assets/changelog.json 顶部 = 1.7.9 / 2026102903 / 3 节 9 条）。★ 单 ABI 构建原因：三 ABI 并行打包会出现 arm64 包缺 resources.arsc / AndroidManifest.xml 的残缺产物（DEF-27 的真实触发条件是并发打包，并非「未 clean」）。",
+  "_note": "本文件描述 public 渠道（应用名「念念」/ 包名 com.aiai.pub）。2026-10-29（1.8.0）：①上下文窗口上限 131072 → 1_000_000（滑杆改 6 档 32K/64K/128K/256K/512K/1M），上下文条数上限 100 → 2000，默认值窗口 32K → 128K、条数 20 → 100、maxMessages 200 → 1000；②老用户旧默认值一次性迁移（三值联合指纹 32000/20/200 + contextDefaultsMigrated 标记，只升一次）；③默认模型 deepseek-chat → deepseek-flash（官方 2026-07-24 已退役旧名）；④修「一直卡在等待模型」：LlmClient 流式 readTimeout(0)=永不超时 → 有限空闲超时（连接超时 3 倍，夹 [60s,600s]）。★ changelog 取的是「1.7.9 → 本版」的增量。sizeBytes / sha256 取自 arm64-v8a 单 ABI 构建并**逐包结构校验通过**的产物 app-public-arm64-v8a-release.apk（349 条目 / AndroidManifest.xml=1 / resources.arsc=1；aapt2 核 package=com.aiai.pub versionCode=2026102904 versionName=1.8.0；apksigner 核签名 CN=aiAi；包内 assets/changelog.json 顶部 = 1.8.0 / 2026102904 / 3 节 14 条）。★ 单 ABI 构建原因：三 ABI 并行打包会出现 arm64 包缺 resources.arsc / AndroidManifest.xml 的残缺产物（DEF-27 的真实触发条件是并发打包，并非「未 clean」）。",
   "_schema": "见 docs/reports/n28-update/DESIGN.md §1；与 update/self/version.json 结构相同，只有渠道不同",
   "_channel": "public",
   "_updatedAt": "2026-10-29",
-  "versionCode": 2026102903,
-  "versionName": "1.7.9",
+  "versionCode": 2026102904,
+  "versionName": "1.8.0",
   "changelog": [
-    "以前她只能「你催一下、她发一条」。现在瞬间页右上角「设置」里打开「她可以自己发动态」，不用你先说话，她自己会按节奏发。",
-    "节奏：两条之间至少隔 2 小时（跨所有角色算），每天每人默认最多 2 条、可以改成 1~5 条。★ 这条要花钱，每发一条就是一次模型调用。",
-    "瞬间页顶部多了一排筛选：点「全部」看所有人，点某个角色就只看她发的那几条。",
-    "点动态上的作者头像或名字，会弹出她的主页：头像、名字、「她的 N 条瞬间」和她全部动态。",
-    "角色立绘现在会显示在瞬间里当头像了；没设立绘的显示字母头像，不会出破图。"
+    "「上下文窗口」上限从 12.8 万放开到 100 万 token，滑杆改成 32K / 64K / 128K / 256K / 512K / 1M 六档。",
+    "「上下文条数」上限从 100 条提到 2000 条 —— 这才是以前「怎么调都记不住」的真正原因：条数和窗口谁先到算谁，只拉窗口不拉条数，早期对话照样在第 100 条被裁掉。",
+    "默认值一起上调：窗口 32K → 128K，条数 20 → 100，往回读取 200 → 1000。老用户的设置在升级时自动升一次，只升一次。",
+    "默认模型从 deepseek-chat 换成 deepseek-flash（DeepSeek-V4.1-Flash）。旧名官方已于 2026-07-24 退役，现在能用是官方帮你转到新模型，随时可能断。新模型自带识图。",
+    "修了「一直卡在等待模型」：以前流式请求的读超时是「永不超时」，服务端连上却不发数据时会一直等。现在连续 1~10 分钟没收到任何数据就断开并如实报错，但不会掐断正常的长回复。",
+    "★ 代价说在前面：窗口越大，每说一句话都要把整段历史重发一遍。1M 满载一轮可能一块多钱，128K 日常够用；「省 Token 模式」记得开着，费用能差十倍以上。"
   ],
   "apk": [
     {
       "abi": "arm64-v8a",
-      "url": "https://github.com/xiaofengct/niannian/releases/download/v1.7.9/niannian-1.7.9-arm64-v8a.apk",
-      "sizeBytes": 30030995,
-      "sha256": "e3b286ed794ee26bead8873c096a7b842a94e7bc4d254dc6008d6bda4232a35a"
+      "url": "https://github.com/xiaofengct/niannian/releases/download/v1.8.0/niannian-1.8.0-arm64-v8a.apk",
+      "sizeBytes": 30033827,
+      "sha256": "a1caf63e6c72ec3d24675bcf6f3364ef2f2216e812fb66cfa947c0cbdd9556d0"
     }
   ],
   "force": false,
