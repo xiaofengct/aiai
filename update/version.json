@@ -1,24 +1,25 @@
 {
-  "_note": "本文件描述 public 渠道（应用名「念念」/ 包名 com.aiai.pub）。2026-10-29（1.8.0）：①上下文窗口上限 131072 → 1_000_000（滑杆改 6 档 32K/64K/128K/256K/512K/1M），上下文条数上限 100 → 2000，默认值窗口 32K → 128K、条数 20 → 100、maxMessages 200 → 1000；②老用户旧默认值一次性迁移（三值联合指纹 32000/20/200 + contextDefaultsMigrated 标记，只升一次）；③默认模型 deepseek-chat → deepseek-flash（官方 2026-07-24 已退役旧名）；④修「一直卡在等待模型」：LlmClient 流式 readTimeout(0)=永不超时 → 有限空闲超时（连接超时 3 倍，夹 [60s,600s]）。★ changelog 取的是「1.7.9 → 本版」的增量。★★ 本包为**修复 testOnly 后重建**：首版误用 `-Pandroid.injected.build.abi` 单 ABI 构建，AGP 把 APK 标成 `android:testOnly=\"true\"` ⇒ 真机安装报「安装失败(-15)」。重建时加 `-Pandroid.injected.testOnly=false`，已核 testOnly=0。sizeBytes / sha256 取自 arm64-v8a 单 ABI 构建并**逐包结构校验通过**的产物 app-public-arm64-v8a-release.apk（349 条目 / AndroidManifest.xml=1 / resources.arsc=1；aapt2 核 package=com.aiai.pub versionCode=2026102904 versionName=1.8.0；apksigner 核签名 CN=aiAi；包内 assets/changelog.json 顶部 = 1.8.0 / 2026102904 / 3 节 14 条）。★ 单 ABI 构建原因：三 ABI 并行打包会出现 arm64 包缺 resources.arsc / AndroidManifest.xml 的残缺产物（DEF-27 的真实触发条件是并发打包，并非「未 clean」）。",
+  "_note": "本文件描述 public 渠道（应用名「念念」/ 包名 com.aiai.pub）。2026-10-31（1.8.1）：①设置页 171 处说明收进问号圆点，新增设置搜索，「模型」拆成五张卡；②填 Key 的框默认打码（根因：EditField 的 password 参数此前从未在函数体里使用 ⇒ 5 处全明文）+ 密码键盘；③联网搜索服务商 2 → 5 家（DeepSeek 默认 / 博查 / 智谱 / 百度千帆 / Tavily），默认走 DeepSeek 官方搜索用「模型连接」那把 Key，老用户存过 Tavily 密钥的继续走 Tavily；④全 App 指代统一「Ta」；⑤生图卡补「硅基流动认 image_size 而本仓发 size ⇒ 尺寸设置不生效」的诚实边界。★ changelog 取的是「1.8.0 → 本版」的增量。sizeBytes / sha256 取自 release 产物（349 条目 / AndroidManifest.xml=1 / resources.arsc=1 / aapt2 dump badging 无 testOnly；aapt2 核 versionCode=2026103101 versionName=1.8.1；apksigner 核签名 CN=aiAi；包内 assets/changelog.json 顶部 = 1.8.1 / 2026103101 / 4 节 17 条，且与源码 md5 一致）。",
   "_schema": "见 docs/reports/n28-update/DESIGN.md §1；与 update/self/version.json 结构相同，只有渠道不同",
   "_channel": "public",
-  "_updatedAt": "2026-10-29",
-  "versionCode": 2026102904,
-  "versionName": "1.8.0",
+  "_updatedAt": "2026-10-31",
+  "versionCode": 2026103101,
+  "versionName": "1.8.1",
   "changelog": [
-    "「上下文窗口」上限从 12.8 万放开到 100 万 token，滑杆改成 32K / 64K / 128K / 256K / 512K / 1M 六档。",
-    "「上下文条数」上限从 100 条提到 2000 条 —— 这才是以前「怎么调都记不住」的真正原因：条数和窗口谁先到算谁，只拉窗口不拉条数，早期对话照样在第 100 条被裁掉。",
-    "默认值一起上调：窗口 32K → 128K，条数 20 → 100，往回读取 200 → 1000。老用户的设置在升级时自动升一次，只升一次。",
-    "默认模型从 deepseek-chat 换成 deepseek-flash（DeepSeek-V4.1-Flash）。旧名官方已于 2026-07-24 退役，现在能用是官方帮你转到新模型，随时可能断。新模型自带识图。",
-    "修了「一直卡在等待模型」：以前流式请求的读超时是「永不超时」，服务端连上却不发数据时会一直等。现在连续 1~10 分钟没收到任何数据就断开并如实报错，但不会掐断正常的长回复。",
-    "★ 代价说在前面：窗口越大，每说一句话都要把整段历史重发一遍。1M 满载一轮可能一块多钱，128K 日常够用；「省 Token 模式」记得开着，费用能差十倍以上。"
+    "设置页瘦身：171 处小字说明收进功能名右上角的小圆圈，点一下弹出整段（设置页 92、人设页 26、其余 53）。会让数据丢、功能降级、要花钱或会出网这三类说明仍然常驻，不藏进问号。",
+    "设置页顶上多了搜索框，忘了开关在哪张卡直接搜（试试「上下文」「密钥」「语音」，搜「声音」也能找到「语音朗读」）；「模型」下面拆成对话 / 看图 / 生图 / 听觉 / 语音朗读五张可折叠的卡。",
+    "填 API Key 的框默认打码了 —— 以前那几格是明文显示的（EditField 的 password 参数写了却从未生效），别人站旁边扫一眼就能记住。键盘也换成了密码键盘，主模型 / 多套接口配置 / 看图 / 生图 / 听觉五处全改。",
+    "联网搜索不用再注册第二家了：默认走 DeepSeek 官方搜索，直接用你「模型连接」里那把 Key。以前必须先注册 Tavily 并绑卡，没填密钥时连「可以搜」都不会教给模型 —— 开关打开了也什么都不会发生。",
+    "搜索服务商从 2 家扩到 5 家：DeepSeek（默认）/ 博查 / 智谱 / 百度千帆 / Tavily。各家密钥分开存，来回切不会把 A 家的 Key 显示到 B 家框里。",
+    "全 App 里指代角色统一成「Ta」，不再分「她」「他」。",
+    "★ 计费照实说：DeepSeek 搜索每 1000 次成功请求 $0.75，空结果与失败不计费，钱从你 DeepSeek 余额扣，本 App 不代收。博查与智谱没核到公开价目，界面写「以官网为准」；百度千帆官方给每天 100 次免费。必应搜索 API 微软已于 2025-08-11 停用，有意没接。"
   ],
   "apk": [
     {
       "abi": "arm64-v8a",
-      "url": "https://github.com/xiaofengct/niannian/releases/download/v1.8.0/niannian-1.8.0-arm64-v8a.apk",
-      "sizeBytes": 30033811,
-      "sha256": "04735c91b298f7ff8cb30968e6e858aa294cddc443857a396ecbd6022eb1a07d"
+      "url": "https://github.com/xiaofengct/niannian/releases/download/v1.8.1/niannian-1.8.1-arm64-v8a.apk",
+      "sizeBytes": 30054723,
+      "sha256": "bc74b035be8e9277ef471ba62042bfd82b1f7fcc66161d092903f6e2e471945e"
     }
   ],
   "force": false,
