@@ -1,11 +1,12 @@
 {
-  "_note": "本文件描述 public 渠道（应用名「念念」/ 包名 com.aiai.pub）。2026-10-31（1.8.1）：①设置页 171 处说明收进问号圆点，新增设置搜索，「模型」拆成五张卡；②填 Key 的框默认打码（根因：EditField 的 password 参数此前从未在函数体里使用 ⇒ 5 处全明文）+ 密码键盘；③联网搜索服务商 2 → 5 家（DeepSeek 默认 / 博查 / 智谱 / 百度千帆 / Tavily），默认走 DeepSeek 官方搜索用「模型连接」那把 Key，老用户存过 Tavily 密钥的继续走 Tavily；④全 App 指代统一「Ta」；⑤生图卡补「硅基流动认 image_size 而本仓发 size ⇒ 尺寸设置不生效」的诚实边界。★ changelog 取的是「1.8.0 → 本版」的增量。sizeBytes / sha256 取自 release 产物（349 条目 / AndroidManifest.xml=1 / resources.arsc=1 / aapt2 dump badging 无 testOnly；aapt2 核 versionCode=2026103101 versionName=1.8.1；apksigner 核签名 CN=aiAi；包内 assets/changelog.json 顶部 = 1.8.1 / 2026103101 / 4 节 17 条，且与源码 md5 一致）。",
+  "_note": "本文件描述 public 渠道（应用名「念念」/ 包名 com.aiai.pub）。2026-10-31（1.8.1）：①设置页 171 处说明收进问号圆点，新增设置搜索，「模型」拆成五张卡；②填 Key 的框默认打码（根因：EditField 的 password 参数此前从未在函数体里使用 ⇒ 5 处全明文）+ 密码键盘；③联网搜索服务商 2 → 5 家（DeepSeek 默认 / 博查 / 智谱 / 百度千帆 / Tavily），默认走 DeepSeek 官方搜索用「模型连接」那把 Key，老用户存过 Tavily 密钥的继续走 Tavily；④全 App 指代统一「Ta」；⑤生图卡补「硅基流动认 image_size 而本仓发 size ⇒ 尺寸设置不生效」的诚实边界。★ changelog 取的是「1.8.0 → 本版」的增量。sizeBytes / sha256 取自 release 产物（349 条目 / AndroidManifest.xml=1 / resources.arsc=1 / aapt2 dump badging 无 testOnly；aapt2 核 versionCode=2026103101 versionName=1.8.1；apksigner 核签名 CN=aiAi；包内 assets/changelog.json 顶部 = 1.8.1 / 2026103101 / 4 节 17 条，且与源码 md5 一致）。 ★ 2026-10-31 同版本重发（versionCode 仍 2026103101）：更新源 raw.githubusercontent.com → cdn.jsdelivr.net（raw 国内直连不通，检查更新只会显示「连不上」）；sha256/sizeBytes 已换成这次重编的产物，与 Release 资产一一对应。",
   "_schema": "见 docs/reports/n28-update/DESIGN.md §1；与 update/self/version.json 结构相同，只有渠道不同",
   "_channel": "public",
   "_updatedAt": "2026-10-31",
   "versionCode": 2026103101,
   "versionName": "1.8.1",
   "changelog": [
+    "更新检查换了一条国内能连上的线路：以前那个地址在国内常常打不开，点「检查更新」只看到「连不上」。现在换到国内可以访问的加速服务，能正常提示新版本了。",
     "设置页瘦身：171 处小字说明收进功能名右上角的小圆圈，点一下弹出整段（设置页 92、人设页 26、其余 53）。会让数据丢、功能降级、要花钱或会出网这三类说明仍然常驻，不藏进问号。",
     "设置页顶上多了搜索框，忘了开关在哪张卡直接搜（试试「上下文」「密钥」「语音」，搜「声音」也能找到「语音朗读」）；「模型」下面拆成对话 / 看图 / 生图 / 听觉 / 语音朗读五张可折叠的卡。",
     "填 API Key 的框默认打码了 —— 以前那几格是明文显示的（EditField 的 password 参数写了却从未生效），别人站旁边扫一眼就能记住。键盘也换成了密码键盘，主模型 / 多套接口配置 / 看图 / 生图 / 听觉五处全改。",
@@ -18,8 +19,8 @@
     {
       "abi": "arm64-v8a",
       "url": "https://github.com/xiaofengct/niannian/releases/download/v1.8.1/niannian-1.8.1-arm64-v8a.apk",
-      "sizeBytes": 30054723,
-      "sha256": "bc74b035be8e9277ef471ba62042bfd82b1f7fcc66161d092903f6e2e471945e"
+      "sizeBytes": 30054843,
+      "sha256": "65e57e09d1a7f0ae90b4b0c60b65d4b805ea948a45f0a1da41091359a47e9876"
     }
   ],
   "force": false,
